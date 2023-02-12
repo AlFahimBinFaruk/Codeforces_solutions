@@ -3,11 +3,11 @@
 using namespace std;
 
 int main()
-{
+{   
     int t;
     cin >> t;
-    while (t--)
-    {
+
+    while(t--){
         long long int a;
         long long int b;
         long long int n;
@@ -17,33 +17,10 @@ int main()
         cin >> n >> m;
 
         long long int result = 0;
-        if (m > n)
-        {
-            result = a * n;
-        }
-        else
-        {
-            while (n > m)
-            {
-                result += m * a;
-                n = n - (m + 1);
-            }
-            while (n > 0)
-            {
-                if (b < a)
-                {
-                    result += n * b;
-                }
-                else
-                {
-                    result += n * a;
-                }
 
-                n -= 1;
-            }
-        }
-
-        printf("%lld \n",result);
+        result += a * (n / (m+1)) * m;
+        result += min((n%(m+1)*a),n%(m+1)*b);
+        cout << min(result,(n*b)) << endl;
     }
     return 0;
 }
