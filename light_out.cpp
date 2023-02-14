@@ -21,7 +21,8 @@ int main()
             int t = givenArr[i][j];
 
             for (int a = 0; a < t; a++)
-            {
+            {   
+                // current
                 if (result[i][j] == 0)
                 {
                     result[i][j] = 1;
@@ -30,7 +31,8 @@ int main()
                 {
                     result[i][j] = 0;
                 }
-
+                
+                // top
                 if (result[i - 1][j] == 0 && ((i - 1) >= 0))
                 {
                     result[i - 1][j] = 1;
@@ -39,7 +41,8 @@ int main()
                 {
                     result[i - 1][j] = 0;
                 }
-
+                
+                // bottom
                 if (result[i + 1][j] == 0 && ((i + 1) <= 2))
                 {
                     result[i + 1][j] = 1;
@@ -48,7 +51,8 @@ int main()
                 {
                     result[i + 1][j] = 0;
                 }
-
+                 
+                // left 
                 if (result[i][j - 1] == 0 && ((j - 1) >= 0))
                 {
                     result[i][j - 1] = 1;
@@ -57,7 +61,8 @@ int main()
                 {
                     result[i][j - 1] = 0;
                 }
-
+                
+                // right
                 if (result[i][j + 1] == 0 && ((j + 1) <= 2))
                 {
                     result[i][j + 1] = 1;
